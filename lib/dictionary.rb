@@ -1,3 +1,5 @@
+
+def dictionary_for_seeds
 dictionary = "A
 a
 aa
@@ -235885,8 +235887,9 @@ zythum
 Zyzomys
 Zyzzogeton
 "
-dictionary_array = dictionary.split
+  dictionary_array = dictionary.split
 
-dictionary_array_of_hashes = dictionary_array.map do |word|
-  {spelling: word, length: word.length}
+  dictionary_array_of_hashes = dictionary_array.map do |word|
+    {spelling: word, length: word.length}
+  end
 end
