@@ -1,4 +1,4 @@
-dictionary = "A
+A
 a
 aa
 aal
@@ -235884,9 +235884,3 @@ Zythia
 zythum
 Zyzomys
 Zyzzogeton
-"
-dictionary_array = dictionary.split
-
-dictionary_array_of_hashes = dictionary_array.map do |word|
-  {spelling: word, length: word.length}
-end
