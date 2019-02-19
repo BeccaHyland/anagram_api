@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require './lib/dictionary.rb'
 require './lib/progress_bar.rb'
 
 puts "Cleaning the database before seeding. This will take a few minutes..."
@@ -16,12 +15,12 @@ if Rails.env == 'development' || Rails.env == 'production'
   puts "Database cleaned, now seeding all words in the English dictionary:"
   progress_bar = ProgressBar.new(235886)
 
-  dictionary_for_seeds.each do |word_hash|
+  File.open('./lib/dictionary.txt').each do |line|
     Word.create!(
-      spelling: word_hash[:spelling],
-      length: word_hash[:length]
+      spelling: line.chomp,
+      length: line.chomp.length
     )
     progress_bar.increment
   end
-  puts "Success! Anagram API database seeding complete."
+  puts " Success! Anagram API database seeding complete."
 end
