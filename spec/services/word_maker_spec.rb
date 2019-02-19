@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe WordMaker do
-  describe 'instance methods' do
+  describe 'instance methods (unit testing)' do
     describe '#parsed_words' do
       it 'parses array into word hashes formatted to db' do
         words_from_request = ["absotively", "posilutely"]
