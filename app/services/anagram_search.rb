@@ -6,9 +6,16 @@ class AnagramSearch
   def get_array
     alphabetized_subject = @subject.chars.sort.join.downcase
 
-    matching_length_array.find_all do |word|
-      alphabetized_subject == word.chars.sort.join.downcase
-    end
+    anagrams_cleaner(
+      matching_length_array.find_all do |word|
+        alphabetized_subject == word.chars.sort.join.downcase
+      end
+    )
+  end
+
+  def anagrams_cleaner(array)
+    array.delete(@subject)
+    array.uniq
   end
 
 

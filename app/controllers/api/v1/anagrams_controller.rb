@@ -1,6 +1,7 @@
 class Api::V1::AnagramsController < ApplicationController
   def show
-    render json: {anagrams: anagram_search.get_array}
+    anagrams = anagram_search.get_array
+    render json: {anagrams: anagrams}
   end
 
   private
