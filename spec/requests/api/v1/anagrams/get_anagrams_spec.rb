@@ -24,6 +24,7 @@ describe 'GET /api/v1/anagrams/:subject.json' do
         expect(response_body[:anagrams].length).to eq(2)
         expect(response_body[:anagrams]).to include("dare")
         expect(response_body[:anagrams]).to include("dear")
+        expect(response_body[:anagrams]).to_not include("read")
       end
     end
   end
