@@ -1,5 +1,5 @@
 # Anagram API
-![](https://media.giphy.com/media/2djV2sLJFpRirS0EMk/giphy.gif)
+![](https://media.giphy.com/media/2djV2sLJFpRirS0EMk/giphy-downsized-large.gif)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
