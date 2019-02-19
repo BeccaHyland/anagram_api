@@ -2,15 +2,14 @@ require 'rails_helper'
 
 describe AnagramSearch do
   describe 'instance methods (unit testing)' do
-    # describe '#get_array' do
-    #   it 'returns array of anagrams matching subject or empty array if none' do
-    #     # subject = "read"
-    #     # search = AnagramSearch.new(subject)
-    #     #
-    #     # expect(search.get_array).to be_an(Array)
-    #   end
-    # end
+    describe '#get_array' do
+      it 'returns array of anagrams matching subject or empty array if none' do
+        subject = "read"
+        search = AnagramSearch.new(subject)
 
+        expect(search.get_array).to be_an(Array)
+      end
+    end
 
     describe '#matching_length_array' do
       it 'returns array of words having same length as subject' do
@@ -22,16 +21,6 @@ describe AnagramSearch do
         subject = "read"
         search = AnagramSearch.new(subject)
         expect(search.matching_length_array).to be_an(Array)
-      end
-    end
-
-    describe '#alphabetize' do
-      it 'returns a string with its characters sorted alphabetically' do
-        subject = "read"
-        search = AnagramSearch.new(subject)
-
-        word = "wow"
-        expect(search.alphabetize(word)).to eq("oww")
       end
     end
   end
