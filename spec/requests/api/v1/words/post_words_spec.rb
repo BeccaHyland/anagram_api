@@ -14,7 +14,7 @@ describe 'POST /api/v1/words.json' do
 
         expect(response).to be_successful
         expect(response.status).to eq(201)
-        expect(last_word.spelling).to eq(payload["words"][-1])
+        expect(last_word.spelling).to eq(payload[:words][-1])
       end
     end
   end
