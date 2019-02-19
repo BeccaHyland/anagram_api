@@ -27,5 +27,21 @@ describe 'GET /api/v1/anagrams/:subject.json' do
         expect(response_body[:anagrams]).to_not include("read")
       end
     end
+
+    describe 'with limit included in correctly formatted request' do
+      it 'returns array of any anagrams matching subject' do
+        subject_of_anagram = "read"
+        limit = 1
+
+        get "/api/v1/anagrams/#{subject_of_anagram}.json/?limit=#{limit}"
+
+        expect(response).to be_successful
+        expect(response.status).to eq(200)
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+        expect(response_body[:anagrams]).to be_an(Array)
+        expect(response_body[:anagrams].length).to eq(1)
+      end
+    end
   end
 end

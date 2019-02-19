@@ -1,11 +1,11 @@
 class AnagramSearch
   def initialize(subject, limit = nil)
       @subject = subject
+      @limit = limit
   end
 
   def get_array
     alphabetized_subject = @subject.chars.sort.join.downcase
-
     anagrams_cleaner(
       matching_length_array.find_all do |word|
         alphabetized_subject == word.chars.sort.join.downcase
@@ -15,7 +15,7 @@ class AnagramSearch
 
   def anagrams_cleaner(array)
     array.delete(@subject)
-    array.uniq
+    @limit ? array.uniq.take(@limit.to_i) : array.uniq
   end
 
 

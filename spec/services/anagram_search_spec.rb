@@ -16,7 +16,7 @@ describe AnagramSearch do
         search = AnagramSearch.new(subject)
 
         expect(search.get_array).to be_an(Array)
-        expect(search.get_array.length).to be(2)
+        expect(search.get_array.length).to eq(2)
         expect(search.get_array).to include("dare")
         expect(search.get_array).to include("dear")
         expect(search.get_array).to_not include("read")

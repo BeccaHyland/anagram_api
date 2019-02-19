@@ -7,6 +7,6 @@ class Api::V1::AnagramsController < ApplicationController
   private
 
   def anagram_search
-    AnagramSearch.new(params[:id])
+    AnagramSearch.new(params[:id], params[:limit])
   end
 end
