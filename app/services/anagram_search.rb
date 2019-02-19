@@ -5,14 +5,10 @@ class AnagramSearch
 
   def get_array
     alphabetized_subject = @subject.chars.sort.join.downcase
-    anagrams = []
 
-    matching_length_array.each do |word|
-      if alphabetized_subject == word.chars.sort.join.downcase
-        anagrams.push(word)
-      end
+    matching_length_array.find_all do |word|
+      alphabetized_subject == word.chars.sort.join.downcase
     end
-    anagrams
   end
 
 
