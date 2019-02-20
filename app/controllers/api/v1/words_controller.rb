@@ -10,7 +10,22 @@ class Api::V1::WordsController < ApplicationController
     end
   end
 
+  def destroy
+    word = word_params[:id]
+    Word.find_by_spelling(word).delete
+    render json: {}, status: 204
+  end
+
+  def destroy_all
+    Word.destroy_all
+    render json: {}, status: 204
+  end
+
   private
+
+  def word_params
+    params.permit(:id)
+  end
 
   def word_maker
     WordMaker.new(params[:words])
