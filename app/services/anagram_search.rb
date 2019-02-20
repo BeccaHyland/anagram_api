@@ -20,6 +20,6 @@ class AnagramSearch
 
   def matching_length_array
     length = @subject.length
-    Rails.cache.fetch("length_#{length}_words") { puts 'querying db...'; Word.where(length: length).pluck(:spelling) }
+    Rails.cache.fetch("length_#{length}_words") { Word.where(length: length).pluck(:spelling) }
   end
 end
