@@ -4,9 +4,10 @@ An anagram is a rearrangement of the letters of a word to form a new word. This 
 
 The [production site](https://anagram-api-by-becca.herokuapp.com/) is seeded with some select anagrams, or for more anagram options, you can clone and download a copy of the app to seed and access the entire dictionary. (Production site hosted for free on Heroku, limited to 10000 database rows)
 
-View this project's [Agile board](https://trello.com/b/jdQJCuqi/anagram-api) and scroll down for API endpoint info.
+* View this project's [Agile board](https://trello.com/b/jdQJCuqi/anagram-api)
+* Skip down to [API endpoints](#api-endpoints) documentation
 
-#### Seeding the app locally
+#### Seeding the app locally: video
 Seeding the database with all words in the English dictionary. Handy progress indicator supports mental health!
 ![](public/ProgressTo100.gif)
 
@@ -49,7 +50,7 @@ optional: 7. For the most anagram fun, if you have time to seed the entire dicti
 ##### Current Test Coverage:
 <img width="1436" alt="screen shot 2019-02-20 at 1 12 26 pm" src="https://user-images.githubusercontent.com/39714935/53121328-3156d080-3511-11e9-80e2-04a15abd8a11.png">
 
-### API Endpoints
+### <a name="api-endpoints"></a>API Endpoints
 ##### POST `/api/v1/words.json`
 * in the request body, using an HTTP client such as Postman (below) add one or more words in JSON format as follows: `{"words": ["absotively", "posilutely"] }`
 <img width="1097" alt="screen shot 2019-02-20 at 12 39 42 pm" src="https://user-images.githubusercontent.com/39714935/53120137-6150a480-350e-11e9-8e83-5f22e4af4054.png">
