@@ -24,16 +24,6 @@ describe 'DELETE /api/v1/words.json' do
   describe 'as a visitor' do
     describe 'with correctly formatted request' do
       it 'deletes one word from database' do
-        subject_of_anagram = "dear"
-
-        get "/api/v1/anagrams/#{subject_of_anagram}.json"
-
-        response_body = JSON.parse(response.body, symbolize_names: true)
-
-        expect(response_body[:anagrams].length).to eq(2)
-        expect(response_body[:anagrams]).to include("read")
-        expect(response_body[:anagrams]).to include("dare")
-
         delete '/api/v1/words/read.json'
 
         words = Word.all
@@ -41,13 +31,6 @@ describe 'DELETE /api/v1/words.json' do
         expect(response).to be_successful
         expect(response.status).to eq(204)
         expect(words.count).to eq(4)
-
-        get "/api/v1/anagrams/#{subject_of_anagram}.json"
-
-        response_body = JSON.parse(response.body, symbolize_names: true)
-
-        expect(response_body[:anagrams].length).to eq(1)
-        expect(response_body[:anagrams]).to_not include("read")
       end
     end
   end
