@@ -1,5 +1,6 @@
 # Anagram API
-![](https://media.giphy.com/media/2djV2sLJFpRirS0EMk/giphy-downsized-large.gif)
+Seeding the database with all words in the English dictionary. Progress indicator for your mental health!
+![](public/ProgressTo100.gif)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
