@@ -1,5 +1,4 @@
 # Anagram API [![Build Status](https://travis-ci.com/BeccaHyland/anagram_api.svg?token=Rzz4nDgECw7FZhpsvHur&branch=master)](https://travis-ci.com/BeccaHyland/anagram_api)
-### Introduction
 An anagram is a rearrangement of the letters of a word to form a new word. This API-only Rails app ingests the 235,886 word English dictionary and allows the user to search for anagrams, add new words to the dictionary individually or in batches, and delete one or all words from the dictionary.
 
 The [production site](https://anagram-api-by-becca.herokuapp.com/) is seeded with some select anagrams, or for more anagram options, you can clone and download a copy of the app to seed and access the entire dictionary. (Production site hosted for free on Heroku, limited to 10000 database rows)
