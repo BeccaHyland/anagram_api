@@ -1,7 +1,8 @@
 class Api::V1::WordsController < ApplicationController
   def create
     words = word_maker.new_words
-    if words.each do |word|
+    if words.length > 0
+      words.each do |word|
         word.save
       end
       render json: {message: "Success!"}, status: 201
