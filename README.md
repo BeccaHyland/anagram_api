@@ -30,7 +30,7 @@ For Object-Oriented design, the following decisions were made:
 
 ### Backlog for Iteration 2
 1. See repo branch `cache_words_by_length` for a draft of a low-level caching solution. Draft caches in Rails `memory_store`, awaiting functional cache invalidation.
-2. Guard against duplicate Word POSTs - currently any duplicates are filtered out of GET requests by the AnagramSearch class
+2. Guard against duplicate Word POSTs - currently any Word duplicates are filtered out of responses to GET `/anagram` requests by the AnagramSearch class
 3. API endpoint to DELETE one Word (in format requested by Product Owner) does not follow RESTful convention, making controller less readable when `params[:id]` is referenced and actually holds a word's spelling
 4. Consider an endpoint to seed the database (rake task) with all Words in the dictionary.
 
