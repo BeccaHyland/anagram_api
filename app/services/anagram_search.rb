@@ -18,9 +18,8 @@ class AnagramSearch
     @limit ? array.uniq.take(@limit.to_i) : array.uniq
   end
 
-
   def matching_length_array
     length = @subject.length
-    Word.where(length: length).pluck(:spelling)
+    Rails.cache.fetch("length_#{length}_words") { puts 'querying db...'; Word.where(length: length).pluck(:spelling) }
   end
 end
