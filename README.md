@@ -21,8 +21,9 @@ For performance, the following decisions were made:
 ![screen shot 2019-02-20 at 1 08 20 pm](https://user-images.githubusercontent.com/39714935/53121096-a1b12200-3510-11e9-857a-f771bfc07786.png)
 
 For Object-Oriented design, the following decisions were made:
-3. Formatting incoming POST Word requests for database compatibility (model logic) is handled by a PORO class `WordMaker` 
-4. Mining the database and finding anagram matches is handled by a PORO class `AnagramSearch`
+
+4. Formatting incoming POST Word requests for database compatibility (model logic) is handled by a PORO class `WordMaker` 
+5. Mining the database and finding anagram matches is handled by a PORO class `AnagramSearch`
 
 ##### Edge Cases
 * sad path for a request to DELETE a word that does not appear in the database (was erroring out with `nil`)
@@ -43,7 +44,7 @@ For Object-Oriented design, the following decisions were made:
 6. Using the API endpoints below, add words to your database, then request anagrams or delete words (see endpoints)
 optional: 7. For the most anagram fun, if you have time to seed the entire dictionary, run `rake db:seed`
 
-### Running the test suite: video
+### Running the test suite
 1. After the above setup, run the developer's RSpec test suite with `rspec`
 2. If you haven't done #7 above, you can also run the Product Owner's test suite with `ruby anagram_test.rb` (If you have already seeded the whole dictionary, one test that expects a more limited set of words will fail.)
 
