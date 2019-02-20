@@ -1,6 +1,5 @@
-# Anagram API
+# Anagram API [![Build Status](https://travis-ci.com/BeccaHyland/anagram_api.svg?token=Rzz4nDgECw7FZhpsvHur&branch=master)](https://travis-ci.com/BeccaHyland/anagram_api)
 ### Introduction
-[![Build Status](https://travis-ci.com/BeccaHyland/anagram_api.svg?token=Rzz4nDgECw7FZhpsvHur&branch=master)](https://travis-ci.com/BeccaHyland/anagram_api)
 View this project's [Agile board](https://trello.com/b/jdQJCuqi/anagram-api)
 
 An anagram is a rearrangement of the letters of a word to form a new word. This API-only Rails app ingests the 235,886 word English dictionary and allows the user to search for anagrams, add new words to the dictionary individually or in batches, and delete one or all words from the dictionary.
@@ -33,7 +32,7 @@ optional: 7. For the most anagram fun, if you have time to seed the entire dicti
 
 ### API Endpoints
 ##### POST `/api/v1/words.json`
-* in the request body, add one or more words in JSON format as follows: `{"words": ["absotively", "posilutely"] }
+* in the request body, add one or more words in JSON format as follows: `{"words": ["absotively", "posilutely"] }`
 
 ##### DELETE `/api/v1/words/TYPE WORD TO DELETE HERE`
 * deletes a specified word from the database
