@@ -17,5 +17,17 @@ describe 'POST /api/v1/words.json' do
         expect(last_word.spelling).to eq(payload[:words][-1])
       end
     end
+
+    describe 'with incorrectly formatted request' do
+      it 'does not post words to the database' do
+        payload = {
+          "words": [""]
+        }
+
+        post '/api/v1/words.json', params: payload
+
+        expect(response.status).to eq(400)
+      end
+    end
   end
 end

@@ -12,6 +12,6 @@ class WordMaker
   end
 
   def words_under_45
-    @post_words_array.find_all { |word| word.length <= 45 }
+    @post_words_array.find_all { |word| word.length <= 45 && word.length > 0}
   end
 end
