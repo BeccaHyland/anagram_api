@@ -13,8 +13,8 @@ Seeding the database with all words in the English dictionary. Handy progress in
 
 ### Design Overview
 For performance, the following decisions were made:
-1. When words are inserted into the database, the word length (in characters, an integer) is also stored in a column. When the API receives an anagram request, it looks for matches only in the subset of the dictionary where the length of the words matches the length of the requested subject.
-* The trade-off of adding a database column for faster searches is that extra input formatting is needed before database insertion. See note below on Object-Oriented design.
+1. When a Word is added to the database, `length` (in characters, an integer) is also stored in a column. For an anagram request, the app looks for matches only in the subset of the dictionary where the length of the words matches the length of the requested subject.
+    * The trade-off of adding a database column for faster searches is that extra input formatting is needed before database insertion. See note below on Object-Oriented design.
 2. The 'length' column on the Word table is indexed for speedy retrieval.
 ![screen shot 2019-02-19 at 7 26 07 pm](https://user-images.githubusercontent.com/39714935/53061908-54837080-347c-11e9-908d-66ecd465d615.png)
 3. ActiveRecord's `pluck` is used here to save time by fetching less data (only the column requested)
