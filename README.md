@@ -21,8 +21,8 @@ For performance, the following decisions were made:
 
 For Object-Oriented design, the following decisions were made:
 
-4. Formatting incoming POST Word requests for database compatibility (model logic) is handled by a PORO class services/`WordMaker` 
-5. Mining the database and finding anagram matches is handled by a PORO class services/`AnagramSearch`
+4. Formatting incoming POST Word requests for database compatibility (model logic) is handled by a PORO class, services/`WordMaker` 
+5. Mining the database and finding anagram matches is handled by a PORO class, services/`AnagramSearch`
 
 ##### Edge Cases
 * sad path for a request to DELETE a word that does not appear in the database (was erroring out with `nil`)
