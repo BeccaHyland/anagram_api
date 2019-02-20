@@ -4,7 +4,7 @@ class WordMaker
   end
 
   def new_words
-    @new_words ||= parsed_words.map { |word_hash| Word.create(word_hash) }
+    @new_words ||= parsed_words.map { |word_hash| Word.new(word_hash) }
   end
 
   def parsed_words

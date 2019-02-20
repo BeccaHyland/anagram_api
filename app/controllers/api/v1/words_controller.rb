@@ -7,14 +7,19 @@ class Api::V1::WordsController < ApplicationController
       end
       render json: {message: "Success!"}, status: 201
     else
-      render json: {}, status: 400
+      render json: {error: "Try a different word"}, status: 400
     end
   end
 
   def destroy
     word = word_params[:id]
-    Word.find_by_spelling(word).delete
-    render json: {}, status: 204
+    query_result = Word.find_by_spelling(word)
+    if query_result
+      query_result.delete
+      render json: { message: "Successfully deleted: #{query_result}"}, status: 204
+    else
+      render json: { error: "Try a different word" }, status: 400
+    end
   end
 
   def destroy_all

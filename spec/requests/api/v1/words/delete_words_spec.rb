@@ -33,5 +33,13 @@ describe 'DELETE /api/v1/words.json' do
         expect(words.count).to eq(4)
       end
     end
+    describe 'with a repeated correctly formatted request' do
+      it 'returns a 400 error' do
+        delete '/api/v1/words/read.json'
+        delete '/api/v1/words/read.json'
+
+        expect(response.status).to eq(400)
+      end
+    end
   end
 end
